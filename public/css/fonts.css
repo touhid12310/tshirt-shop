@@ -1,0 +1,65 @@
+/* Import the BlackOpsOne font */
+@font-face {
+    font-family: 'BlackOpsOne-Regular';
+    src: url('../fonts/BlackOpsOne-Regular.ttf') format('truetype');
+  }
+
+/* Import the DancingScript font */
+@font-face {
+  font-family: 'DancingScript';
+  src: url('../fonts/DancingScript-VariableFont_wght.ttf') format('truetype');
+}
+
+/* Import the Honk font */
+@font-face {
+  font-family: 'Honk';
+  src: url('../fonts/Honk-Regular-VariableFont_MORF,SHLN.ttf') format('truetype');
+}
+
+/* Import the JosefinSans font */
+@font-face {
+  font-family: 'JosefinSans';
+  src: url('../fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
+}
+
+/* Import the Lobster font */
+@font-face {
+    font-family: 'Lobster';
+    src: url('../fonts/Lobster-Regular.ttf') format('truetype');
+  }
+  
+  /* Import the Pacifico font */
+  @font-face {
+    font-family: 'Pacifico';
+    src: url('../fonts/Pacifico-Regular.ttf') format('truetype');
+  }
+  
+  /* Import the PoorStory font */
+  @font-face {
+    font-family: 'PoorStory';
+    src: url('../fonts/PoorStory-Regular.ttf') format('truetype');
+  }
+  
+  /* Import the Roboto font */
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+  }
+  
+  /* Import the RubikBurned font */
+  @font-face {
+    font-family: 'RubikBurned';
+    src: url('../fonts/RubikBurned-Regular.ttf') format('truetype');
+  }
+  
+  /* Import the SingleDay font */
+  @font-face {
+    font-family: 'SingleDay';
+    src: url('../fonts/SingleDay-Regular.ttf') format('truetype');
+  }
+  
+  /* Import the Sixtyfour font */
+  @font-face {
+    font-family: 'Sixtyfour';
+    src: url('../fonts/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf') format('truetype');
+  }
