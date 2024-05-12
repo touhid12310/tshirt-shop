@@ -25,7 +25,55 @@
 <section class="container my-5">
         <div class="row">
             
-            <div class="col-md-6 bg-white rounded">
+            
+            <div class="col-md-6 order-md-2">
+                <div class="container-fluid bg-white rounded p-2">
+                    <div id="invoice-summary">
+                        <div class="border rounded border-secondary" data-bdd="receipt-container">
+                            <div class="p-2 rounded-top" style="background: lightgray;">
+                                <span>Order will ship as early as <span class="font-weight-bold text-secondary">Apr 25</span></span>
+                            </div>
+                            <div class="border-top border-bottom border-secondary bg-white" data-bdd="invoice-item">
+                                <div class="">
+                                    <div class="row">
+                                        <div id="cartDetails">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="background: lightgray;" class="p-2 rounded-bottom" data-bdd="total-container">
+                                <div class="row">
+                                    <div class="col">Subtotal</div>
+                                    <div class="col-auto" id="subTotal"></div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col">Shipping &amp; Fees</div>
+                                    <div class="col-auto" id="shippingCharge"></div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col">Tax</div>
+                                    <div class="col-auto">$0.00</div>
+                                </div>
+                                <hr>
+                                <div class="" data-bdd="total">
+                                    <div class="row">
+                                        <div class="col">Total</div>
+                                        <div class="col-auto" id="grandTotal"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="mt-1">
+                            <span class="me-2">Have a promotion code?</span>
+                            <span class="text-primary cursor-pointer" type="text">Apply here</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-6 order-md-1 bg-white rounded">
                 <form action="{{ route('order-confirmation') }}" method="post">
                     @csrf
                     <div class="container-fluid">
@@ -95,53 +143,6 @@
                         </div>
                     </div>
                 </form>
-                
-            </div>
-            <div class="col-md-6 ">
-                <div class="container-fluid bg-white rounded p-2">
-                    <div id="invoice-summary">
-                        <div class="border rounded border-secondary" data-bdd="receipt-container">
-                            <div class="p-2 rounded-top" style="background: lightgray;">
-                                <span>Order will ship as early as <span class="font-weight-bold text-secondary">Apr 25</span></span>
-                            </div>
-                            <div class="border-top border-bottom border-secondary bg-white" data-bdd="invoice-item">
-                                <div class="">
-                                    <div class="row">
-                                        <div id="cartDetails">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="background: lightgray;" class="p-2 rounded-bottom" data-bdd="total-container">
-                                <div class="row">
-                                    <div class="col">Subtotal</div>
-                                    <div class="col-auto" id="subTotal"></div>
-                                </div>
-                                <div class="row mt-1">
-                                    <div class="col">Shipping &amp; Fees</div>
-                                    <div class="col-auto" id="shippingCharge"></div>
-                                </div>
-                                <div class="row mt-1">
-                                    <div class="col">Tax</div>
-                                    <div class="col-auto">$0.00</div>
-                                </div>
-                                <hr>
-                                <div class="" data-bdd="total">
-                                    <div class="row">
-                                        <div class="col">Total</div>
-                                        <div class="col-auto" id="grandTotal"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="mt-1">
-                            <span class="me-2">Have a promotion code?</span>
-                            <span class="text-primary cursor-pointer" type="text">Apply here</span>
-                        </div>
-                    </div>
-                </div>
                 
             </div>
         </div>

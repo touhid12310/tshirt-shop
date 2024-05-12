@@ -19,7 +19,7 @@
     <h6 id="">Shop Top - {{ $product->name }}</h6>
 
         <div class="row">
-            <div class="col-2">
+            <div class="col-4 col-md-2">
                 @foreach($products as $product)
                     @if($loop->first)
                         <div class="col-3 d-none" id="thumb">
@@ -29,48 +29,16 @@
                     @endif
                 @endforeach
             </div>
-            <div class="col-5">
+            <div class="col-8 col-md-5">
                 <img id="zoom_01" class="d-none" 
                     src='{{ asset($products->first()->default_front_image) }}' 
                     data-zoom-image="{{ asset($products->first()->default_front_image) }}"
                  />
 
-                 <div class="mt-5 d-none" id="recommendation">
-                    <h5>Recommended <span class="text-primary">For You</span></h5>
-                    <div class="row">
-                        <div class="col-md-6 col-md-2">
-                            <div class="bg-white rounded p-2 single-product border border-secondary">
-                                <a href="http://127.0.0.1:8000/shop/4/details/130" class="text-decoration-none ">
-                                    <img src="http://127.0.0.1:8000/campaign-images/1711790053-front-bb661ab3-1afc-4e03-8c0e-ab4edc4bcae2.png" alt="" class="img-fluid block">
-                                    
-                                </a>
-                                <p class="text-left mt-2">
-                                    <strong class="text-sm d-block">Men's AOP T-Shirt</strong>
-                                    <span class="text-danger">$50</span> <strike>$55</strike>
-                                </p>
-
-                                <button class="btn border border-primary d-block" type="button" style="font-size: 12px; width: 100%">Add to Cart</button>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-md-2">
-                            <div class="bg-white rounded p-2 single-product border border-secondary">
-                                <a href="http://127.0.0.1:8000/shop/4/details/130" class="text-decoration-none ">
-                                    <img src="https://cdn.32pt.com/public/sl-prod-od-0/images/retail-products/FA391D3602F1E2/FA391D3602F1E2-5065A0D4264E-GS3-TC0-PNK/front/medium.jpg" alt="" class="img-fluid block">
-                                    
-                                </a>
-                                <p class="text-left mt-2">
-                                    <strong class="text-sm d-block">Men's AOP T-Shirt</strong>
-                                    <span class="text-danger">$50</span> <strike>$55</strike>
-                                </p>
-
-                                <button class="btn border border-primary d-block" type="button" style="font-size: 12px; width: 100%">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                 </div>
+                 
             </div>
-            <div class="col-5 relative">
-                <div id="zoom-container" style="position: absolute">
+            <div class="col-12 col-md-5 relative">
+                <div id="zoom-container d-none d-md-block" style="position: absolute">
                     
                 </div>
 
@@ -150,7 +118,7 @@
                             <button class="btn btn-primary add-to-cart" type="button" style="width: 100%">Add to Cart</button>
                         </div>
 
-                        <div class="col-md-12 my-3">
+                        <div class="col-md-12 my-3 d-none d-md-block">
                             <h5>Campaign Details</h5>
 
                             {!! $campaign->description !!}
@@ -159,7 +127,43 @@
                     
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="mt-5 d-none" id="recommendation">
+                    <h5>Recommended <span class="text-primary">For You</span></h5>
+                    <div class="row">
+                        <div class="col-md-6 col-md-2">
+                            <div class="bg-white rounded p-2 single-product border border-secondary">
+                                <a href="http://127.0.0.1:8000/shop/4/details/130" class="text-decoration-none ">
+                                    <img src="http://127.0.0.1:8000/campaign-images/1711790053-front-bb661ab3-1afc-4e03-8c0e-ab4edc4bcae2.png" alt="" class="img-fluid block">
+                                    
+                                </a>
+                                <p class="text-left mt-2">
+                                    <strong class="text-sm d-block">Men's AOP T-Shirt</strong>
+                                    <span class="text-danger">$50</span> <strike>$55</strike>
+                                </p>
 
+                                <button class="btn border border-primary d-block" type="button" style="font-size: 12px; width: 100%">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-md-2">
+                            <div class="bg-white rounded p-2 single-product border border-secondary">
+                                <a href="http://127.0.0.1:8000/shop/4/details/130" class="text-decoration-none ">
+                                    <img src="https://cdn.32pt.com/public/sl-prod-od-0/images/retail-products/FA391D3602F1E2/FA391D3602F1E2-5065A0D4264E-GS3-TC0-PNK/front/medium.jpg" alt="" class="img-fluid block">
+                                    
+                                </a>
+                                <p class="text-left mt-2">
+                                    <strong class="text-sm d-block">Men's AOP T-Shirt</strong>
+                                    <span class="text-danger">$50</span> <strike>$55</strike>
+                                </p>
+
+                                <button class="btn border border-primary d-block" type="button" style="font-size: 12px; width: 100%">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
         </div>
 
 </section>
