@@ -1,18 +1,18 @@
 @extends('ecom-layouts.app')
-@section('title', 'Welcome to Tee Shop')
+@section('title', domainDetail()->title)
 @include('ecom-layouts.menu')
 @section('content')
 
 <section class="container">
     <div class="row mb-5">
-        
+
         <div class="col-md-12 text-center filter-type-holder">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
                 @if(Menus())
                 @foreach(Menus() as $menu)
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page"
-                        href="{{route('tags', ['name' => $menu->menu])}}">{{ ucfirst($menu->menu) }}</a>
+                    <a class="nav-link active" aria-current="page" href="{{route('tags', ['name' => $menu->menu])}}">{{
+                        ucfirst($menu->menu) }}</a>
                 </li>
                 @endforeach
                 @else
@@ -48,13 +48,16 @@
         @foreach($products as $product)
         <div class="col-md-3 mb-5 remove-filter filter-{{ $product->category }}">
             <div class="p-3 cart-container  bg-white rounded">
-                <img src="{{ asset($product->default_front_image) }}" alt="" class="img-fluid d-block">
-                <div class="product-name">
-                    <a href="{{ url('/details/'.$product->id) }}">{{ $product?->campaign?->title }}</a>
-                    <span><i class="fa fa-arrow-right" style="transform: rotate(315deg)"></i></span>
-                </div>
+                <a href="{{ url('/details/'.$product->id) }}" class="text-decoration-none">
+                    <img src="{{ asset($product->default_front_image) }}" alt="" class="img-fluid d-block">
+                    <div class="product-name">
+                        {{ $product?->campaign?->title }}
+                        <span><i class="fa fa-arrow-right" style="transform: rotate(315deg)"></i></span>
+                    </div>
+                </a>
                 <div class="product-price">
-                    $21.5
+                    ${{ number_format((float)$product->price, 2, '.', '') }}
+
                 </div>
                 <div class="row colors-holder">
 

@@ -1,5 +1,5 @@
 @extends('ecom-layouts.app')
-@section('title', $campaign->title)
+@section('title', $campaign->title . ' - ' .$product->name)
 @section('style')
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 <style>
@@ -14,9 +14,9 @@
 
 @section('content')
 
-
+<hr>
 <section class="container my-5">
-    <h6 id="">Shop Top - {{ $product->name }}</h6>
+    {{-- <h6 id="">Shop Top - {{ $product->name }}</h6> --}}
 
         <div class="row">
             <div class="col-4 col-md-2">
@@ -44,7 +44,7 @@
 
                 <div>
                     <strong class="d-block mb-2">
-                        <span id="campaign-title" data-campaign-id="{{ $campaign->id }}">{{ $campaign->title }} </span>
+                        <span id="campaign-title" data-campaign-id="{{ $campaign->id }}">{{ $campaign->title . ' - ' .$product->name }} </span>
                         <span id="product-name">
                             {{$products->first()->name}}
                         </span>
@@ -128,45 +128,36 @@
                 </div>
             </div>
         </div>
+<hr>
+
         <div class="row">
             <div class="col-12">
                 <div class="mt-5 d-none" id="recommendation">
-                    <h5>Recommended <span class="text-primary">For You</span></h5>
+                    <h5>Related <span class="text-primary">Products</span></h5>
                     <div class="row">
+                        @foreach($relateds as $related)
                         <div class="col-md-6 col-md-2">
                             <div class="bg-white rounded p-2 single-product border border-secondary">
-                                <a href="http://127.0.0.1:8000/shop/4/details/130" class="text-decoration-none ">
-                                    <img src="http://127.0.0.1:8000/campaign-images/1711790053-front-bb661ab3-1afc-4e03-8c0e-ab4edc4bcae2.png" alt="" class="img-fluid block">
+                                <a href="{{ '/details/'.$related->id }}" class="text-decoration-none ">
+                                    <img src="{{ asset($related->default_front_image) }}" alt="" class="img-fluid block">
                                     
                                 </a>
                                 <p class="text-left mt-2">
-                                    <strong class="text-sm d-block">Men's AOP T-Shirt</strong>
-                                    <span class="text-danger">$50</span> <strike>$55</strike>
+                                    <strong class="text-sm d-block">{{ $related->name }}</strong>
+                                    <span class="text-danger">${{ $related->price }}</span> <strike>${{ $related->price + 3 }}</strike>
                                 </p>
 
-                                <button class="btn border border-primary d-block" type="button" style="font-size: 12px; width: 100%">Add to Cart</button>
+                                <button class="btn border border-primary d-block" type="button" style="font-size: 12px; width: 100%">View Products</button>
                             </div>
                         </div>
-                        <div class="col-md-6 col-md-2">
-                            <div class="bg-white rounded p-2 single-product border border-secondary">
-                                <a href="http://127.0.0.1:8000/shop/4/details/130" class="text-decoration-none ">
-                                    <img src="https://cdn.32pt.com/public/sl-prod-od-0/images/retail-products/FA391D3602F1E2/FA391D3602F1E2-5065A0D4264E-GS3-TC0-PNK/front/medium.jpg" alt="" class="img-fluid block">
-                                    
-                                </a>
-                                <p class="text-left mt-2">
-                                    <strong class="text-sm d-block">Men's AOP T-Shirt</strong>
-                                    <span class="text-danger">$50</span> <strike>$55</strike>
-                                </p>
-
-                                <button class="btn border border-primary d-block" type="button" style="font-size: 12px; width: 100%">Add to Cart</button>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                  </div>
             </div>
         </div>
 
 </section>
+
 @endsection
 
 @section('script')

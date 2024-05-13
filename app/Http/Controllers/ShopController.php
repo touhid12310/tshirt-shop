@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Campaign;
 use App\Models\Product;
+use App\Models\Tag;
 use Illuminate\Http\Request;
+use App\Models\CampaignTag;
 
 class ShopController extends Controller
 {
@@ -52,13 +54,11 @@ class ShopController extends Controller
 
     public function details(Product $product)
     {
-
         $products = Product::with('mockup.sizes', 'campaign')->where('campaign_id', $product->campaign_id)->get();
-
         $campaign = Campaign::findOrFail($product->campaign_id);
-
+        
+        $relateds = Product::where(['user_id' => domainByUserId(), 'type' => 'PRODUCT'])->whereNotIn('id', [$product->id])->whereNotNull('campaign_id')->limit(2)->get();
         $productId = $product->id;
-
-        return view('e-commerce.details', compact('product', 'products', 'campaign', 'productId'));
+        return view('e-commerce.details', compact('product', 'products', 'campaign', 'productId', 'relateds'));
     }
 }

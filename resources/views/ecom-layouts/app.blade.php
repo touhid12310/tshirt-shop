@@ -1,9 +1,9 @@
 @include('ecom-layouts.header')
 <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container-fluid"> 
                   <a class="navbar-brand" href="{{url('/')}}">
-                    <h4>Tshirt-Store</h4>
+                    <h4>{{ domainDetail()->title }}</h4>
                         {{-- <img src="https://img001.prntscr.com/file/img001/XaM2wZjHTtK9T6_eSPgGag.png" alt="" style="width: 100px"> --}}
                   </a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

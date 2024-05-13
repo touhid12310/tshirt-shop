@@ -20,6 +20,20 @@ if (!function_exists('customHelperFunction')) {
         }
     }
 
+    function domainDetail() 
+    {
+        $author = 'https://www.lucky.com';
+        $parsed_url = parse_url($author);
+        $domain = $parsed_url['host'];
+        $domain = preg_replace('/^www\./', '', $domain);
+        $result = StoreFront::where('domain', $domain)->first();
+        if(isset($result)) {
+            return $result;
+        } else {
+            return abort(403, 'Unauthorized access');
+        }
+    }
+
     function Menus()
     {
         $user_id = domainByUserId();
