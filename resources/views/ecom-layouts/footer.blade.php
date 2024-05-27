@@ -42,11 +42,11 @@
         </div>
     </div>
 </footer>
-    <script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
-    <script src="{{ asset('js/popper.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.ez-plus.js') }}"></script>
-    <script src="{{ asset('js/storage.js') }}"></script>
+    <script src="{{ url('js/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ url('js/popper.min.js') }}"></script>
+    <script src="{{ url('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url('js/jquery.ez-plus.js') }}"></script>
+    <script src="{{ url('js/storage.js') }}"></script>
 
     <script>
         var cartItems = pullObjectFromStorage('cartItems')

@@ -8,11 +8,12 @@ $robi = 'hello';
 if (!function_exists('customHelperFunction')) {
     function domainByUserId() 
     {
-        $author = 'https://www.lucky.com';
+        $author = 'https://'.$_SERVER['HTTP_HOST'];
         $parsed_url = parse_url($author);
         $domain = $parsed_url['host'];
         $domain = preg_replace('/^www\./', '', $domain);
         $result = StoreFront::where('domain', $domain)->first();
+
         if(isset($result)) {
             return $result->user_id; //return user_id
         } else {
@@ -22,7 +23,7 @@ if (!function_exists('customHelperFunction')) {
 
     function domainDetail() 
     {
-        $author = 'https://www.lucky.com';
+        $author = 'https://'.$_SERVER['HTTP_HOST'];
         $parsed_url = parse_url($author);
         $domain = $parsed_url['host'];
         $domain = preg_replace('/^www\./', '', $domain);

@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{ asset('font-awesome/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url('font-awesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url('css/fonts.css') }}">
     <style>
         body {
             background: #f8f8fa;

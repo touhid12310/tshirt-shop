@@ -23,11 +23,10 @@
             </ul>
         </div>
     </div>
-    <img src="https://oo-prod.s3.amazonaws.com/public/artworks/2019/03/28/63d39126738c76ac/original.jpg" alt=""
-        class="img-fluid">
+    {{-- <img src="https://oo-prod.s3.amazonaws.com/public/artworks/2019/03/28/63d39126738c76ac/original.jpg" alt=""
+        class="img-fluid"> --}}
 
-    <div class="row mb-5 my-2">
-        <hr>
+    <div class="row mb-5 my-1">
         <div class="col-md-12 text-center">
             <h2 class="text-black">
                 Fresh Arrivals
